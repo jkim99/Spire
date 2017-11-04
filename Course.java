@@ -1,14 +1,21 @@
 import java.io.*;
 public class Course {
+	private int courseNumberInt;
 	private String subject;
 	private String courseNumber;
 	private String name;
 	private String genEds;
-	public Course(String sub, String cnum, String n, String ge) {
+	private String[] majors;
+	private String[] preReqs;
+
+	public Course(String sub, String cnum, String n, String ge, String[] m, String[] pr) {
 		subject = sub;
 		courseNumber = cnum;
 		name = n;
 		genEds = ge;
+		majors = m;
+		preReqs = pr;
+		courseNumberInt = Integer.valueOf("0" + courseNumber.replaceAll("\\D+",""));
 	}
 
 	public String getSubject() {
@@ -27,8 +34,22 @@ public class Course {
 		return genEds;
 	}
 
+	public String[] getMajors() {
+		return majors;
+	}
+
+	public String[] getPreReqs() {
+		return preReqs;
+	}
+
 	public String toString() {
-		return subject + "   " + courseNumber + "   " + name + "   " + genEds + "   ";
+		String major = "";
+		String preReq = "";
+		for(int i = 0; i < majors.length; i++)
+			major += majors[i].replace("\0", "") + " ";
+		for(int i = 0; i < preReqs.length; i++)
+			preReq += preReqs[i] == null ? "" : preReqs[i];
+ 		return subject + "   " + courseNumber + "   " + name + "   " + genEds + "   " + major + "   " + preReq + "   ";
 	}
 }
 
@@ -37,6 +58,7 @@ public class Course {
 14625720
 67501042
 
-javac -cp commons-csv-1.5.jar ProcessData.java Course.java
-java -cp .;commons-csv-1.5.jar ProcessData
+cd Desktop/spire
+javac -cp commons-csv-1.5.jar;apache-tomcat-9.0.1/lib/servlet-api.jar ProcessData.java Course.java
+java -cp .;commons-csv-1.5.jar;apache-tomcat-9.0.1/lib/servlet-api.jar ProcessData
 */

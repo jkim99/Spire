@@ -1,14 +1,18 @@
 import java.util.*;
 import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.csv.CSVFormat;
-public class ProcessData {
+
+public class ProcessData extends HttpServlet {
 	private static String[][] classData;
 	private static Course courses[];
 	public static void main(String args[]) {
 		try {
-			File file = new File("C:/Users/jonat/Desktop/spire/test.csv");
+			File file = new File("C:/Users/jonat/Desktop/spire/Project - C.csv");
 			Reader in = new FileReader(file);
 			CSVParser parser = new CSVParser(in, CSVFormat.RFC4180);
 			List<CSVRecord> records = parser.getRecords();
@@ -21,10 +25,28 @@ public class ProcessData {
 			}
 			courses = new Course[classData.length];
 			for(int i = 0; i < classData.length; i++) {
+				String[] majors = new String[5];
+				for(int j = 0; j < majors.length; j++) {
+					try {
+						majors[j] = classData[i][j + 4];
+					}
+					catch(Exception e) {}
+				}
+
+				String[] preReqs = new String[classData[i].length - 3];
+				for(int j = 0; j < preReqs.length; j++) {
+					try {
+						preReqs[j] = classData[i][j + 9];
+					}
+					catch(Exception e) {}
+				}
+
 				courses[i] = new Course(classData[i][0],
 										classData[i][1],
 										classData[i][2],
-										classData[i][3]);
+										classData[i][3],
+										majors,
+										preReqs);
 				System.out.println(courses[i]);
 			}
 
@@ -114,6 +136,54 @@ public class ProcessData {
 			if(courses[i].getGenEds().equalsIgnoreCase(geneds)) {
 				ret[k] = courses[i];
 				k++;
+			}
+		}
+		return ret;
+	}
+
+	public static Course[] searchMajor(String major) {
+		int count = 0;
+		for(int i = 0; i < courses.length; i++) {
+			String[] majors = courses[i].getMajors();
+			for(int j = 0; j < majors.length; j++) {
+				if(majors[j].equalsIgnoreCase(major)) {
+					count++;
+				}
+			}
+		}
+		int k = 0;
+		Course[] ret = new Course[count];
+		for(int i = 0; i < courses.length; i++) {
+			String[] majors = courses[i].getMajors();
+			for(int j = 0; j < majors.length; j++) {
+				if(majors[j].equalsIgnoreCase(major)) {
+					ret[k] = courses[i];
+					k++;
+				}
+			}
+		}
+		return ret;
+	}
+
+	public static Course[] searchPreReqs(String preReq) {
+		int count = 0;
+		for(int i = 0; i < courses.length; i++) {
+			String[] preReqs = courses[i].getPreReqs();
+			for(int j = 0; j < preReqs.length; j++) {
+				if(preReqs[j].equalsIgnoreCase(preReq)) {
+					count++;
+				}
+			}
+		}
+		int k = 0;
+		Course[] ret = new Course[count];
+		for(int i = 0; i < courses.length; i++) {
+			String[] preReqs = courses[i].getPreReqs();
+			for(int j = 0; j < preReqs.length; j++) {
+				if(preReqs[j].equalsIgnoreCase(preReq)) {
+					ret[k] = courses[i];
+					k++;
+				}
 			}
 		}
 		return ret;
