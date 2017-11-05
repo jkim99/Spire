@@ -59,6 +59,6 @@ public class Course {
 67501042
 
 cd Desktop/spire
-javac -cp commons-csv-1.5.jar;http-20070405.jar ProcessData.java Course.java RootHandler.java EchoHeaderHandler.java EchoGetHandler.java EchoPostHandler.java
+javac -cp commons-csv-1.5.jar;http-20070405.jar ProcessData.java Course.java RootHandler.java Handler.java LoginHandler.java RegisterHandler.java
 java -cp .;commons-csv-1.5.jar;http-20070405.jar ProcessData
 */
