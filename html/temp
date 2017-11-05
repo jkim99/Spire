@@ -1,0 +1,44 @@
+<div class="gtco-tab-content-wrap">
+
+  <div class="gtco-tab-content tab-content active" data-tab-content="1">
+    <div class="col-md-6">
+      <div class="gtco-video gtco-bg" style="background-image: url(images/img_1.jpg); ">
+        <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
+        <div class="overlay"></div>
+      </div>
+    </div>
+
+<a class="twitter-timeline" href="https://twitter.com/UMassAmherst?ref_src=twsrc%5Etfw">Tweets by UMassAmherst</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<div id="gtco-features-2">
+  <div class="gtco-container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+        <h2>Watch Our Videos</h2>
+        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(images/img_1.jpg); ">
+          <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
+          <div class="overlay"></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(images/img_1.jpg); ">
+          <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
+          <div class="overlay"></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(images/img_1.jpg); ">
+          <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
