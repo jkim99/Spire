@@ -10,8 +10,9 @@ public class ProcessData {
 		int port = 4444;
 		HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 		System.out.println("server started at " + port);
-		server.createContext("/", new RootHandler());
-		server.createContext("/login", new LoginHandler());
+		server.createContext("/", new RootHandler(new File("C:/Users/jonat/Desktop/spire/html/main.html")));
+		server.createContext("/login", new LoginHandler(new File("C:/Users/jonat/Desktop/spire/html/login.html")));
+		server.createContext("/register", new RegisterHandler(new File("C:/Users/jonat/Desktop/spire/html/register.html")));
 		server.setExecutor(null);
 		server.start();
 	}
