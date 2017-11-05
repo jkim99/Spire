@@ -1,0 +1,75 @@
+body {
+    font-family: "Open Sans";
+}
+
+header {
+    background-size: cover;
+    height: 640px;
+    width: 100%;
+    text-align: center;
+    font-weight: lighter;
+    background-image: linear-gradient(to right, #E70F47 0%, #cf0d3f 50%);
+    
+}
+.constellation{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+footer{
+  position: fixed;
+  background-color: solid #f1f2f3;
+  padding:30px;
+  padding-left: 645px;
+}
+nav{
+	height: 60px;
+	line-height: 10px;
+	text-align: left;
+  font-size: 18px;
+}
+h1{
+	color: white;
+	margin-top: 70px;
+}
+h2{
+	font-size: 18px;
+	font-weight: normal;
+	text-align: center;
+}
+h3{
+	color: white;
+}
+.welcome{
+  color: white;
+  font-style: Helvetica;
+  text-align: center;
+  font-size: 40px;
+}
+.login{
+    background-color: #e54231;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
+p{
+	text-align: center;
+	max-width: 400px;
+	width:90%;
+	margin:0 auto;
+}
+
+.icon{
+	width: 64px;
+	height: 64px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	background-size: cover;
+}
+
+#lightning{
+	background-image: url('../images/lightning.png');
+}

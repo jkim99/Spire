@@ -59,6 +59,6 @@ public class Course {
 67501042
 
 cd Desktop/spire
-javac -cp commons-csv-1.5.jar;apache-tomcat-9.0.1/lib/servlet-api.jar ProcessData.java Course.java
-java -cp .;commons-csv-1.5.jar;apache-tomcat-9.0.1/lib/servlet-api.jar ProcessData
+javac -cp commons-csv-1.5.jar;http-20070405.jar ProcessData.java Course.java RootHandler.java EchoHeaderHandler.java EchoGetHandler.java EchoPostHandler.java
+java -cp .;commons-csv-1.5.jar;http-20070405.jar ProcessData
 */
