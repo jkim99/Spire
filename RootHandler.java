@@ -55,17 +55,17 @@ public class RootHandler extends Handler implements HttpHandler {
 			}
 
 			//TESTING
-			// System.out.println();
-			// Course[] names = searchName("Tech");
-			// for(int i = 0; i < names.length; i++) { System.out.println(names[i]); }
+			System.out.println();
+			Course[] names = searchName("Tech");
+			for(int i = 0; i < names.length; i++) { System.out.println(names[i]); }
 			
-			// System.out.println();
-			// Course[] subject = searchSubject("astron");
-			// for(int i = 0; i < subject.length; i++) { System.out.println(subject[i]); }
+			System.out.println();
+			Course[] subject = searchSubject("astron");
+			for(int i = 0; i < subject.length; i++) { System.out.println(subject[i]); }
 
-			// System.out.println();
-			// Course[] genEd = searchGenEds("HS U");
-			// for(int i = 0; i < genEd.length; i++) { System.out.println(genEd[i]); }
+			System.out.println();
+			Course[] genEd = searchGenEds("HS U");
+			for(int i = 0; i < genEd.length; i++) { System.out.println(genEd[i]); }
 
 		}
 		catch(IOException ioe) {
